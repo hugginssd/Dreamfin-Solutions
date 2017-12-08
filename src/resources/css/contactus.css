@@ -1,0 +1,15 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+#anchorPane{
+    -fx-background-color:#003366;
+}
+#cmbState
+{
+    -fx-font-style:Cambria;
+    
+}

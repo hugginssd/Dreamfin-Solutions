@@ -1,0 +1,25 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+ -fx-background-color:#FFFFFF;
+}
+#btnAdd{
+    -fx-background-color:#3333ff;
+    -fx-text-fill:#FFFFFF;
+}
+#cmbDocumentType{
+    -fx-font-family:Cambria;
+    -fx-font-style: Italic;
+}
+#btnNextEmployDetails{
+    -fx-background-color:#3333ff;
+    -fx-text-fill:#ffffff;
+    -fx-text-alignment:left;
+}
+#btnPreviousEmployDetails{
+    -fx-background-color:#3333ff;
+    -fx-text-alignment:right;
+    -fx-text-fill:#ffffff;
+}

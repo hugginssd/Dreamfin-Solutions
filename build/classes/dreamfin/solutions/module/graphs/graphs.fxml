@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="764.0" prefWidth="1028.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="dreamfin.solutions.module.graphs.GraphsController">
+    <stylesheets>
+        <URL value="@/resources/css/graphs.css" />
+    </stylesheets>
+   <children>
+      <WebView fx:id="webView" layoutX="1.0" layoutY="2.0" prefHeight="764.0" prefWidth="1027.0" />
+   </children>
+</AnchorPane>

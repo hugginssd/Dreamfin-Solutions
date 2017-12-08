@@ -1,0 +1,15 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.tab-pane{
+    -fx-font-family:Cambria;
+    -fx-font-size:11pt;
+}
+.anchorPane{
+     -fx-background-color:#ccff66;
+}

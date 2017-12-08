@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="715.0" prefWidth="1272.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dreamfin.solutions.module.groups.GroupsController">
+    <stylesheets>
+        <URL value="@/resources/css/groups.css" />
+    </stylesheets>
+   <children>
+      <TabPane prefHeight="715.0" prefWidth="1272.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="transferGroupsTab" text="Transfer Groups">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="1.0" layoutY="1.0" prefHeight="684.0" prefWidth="1272.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="tabtransferGroup" text="Transfer Group">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Accordion layoutY="1.0" prefHeight="653.0" prefWidth="1272.0">
+                                            <panes>
+                                              <TitledPane fx:id="accSelectGroupToTransfer" animated="false" text="Select Group To Transfer">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <GridPane layoutX="10.0" layoutY="16.0" prefHeight="203.0" prefWidth="509.0">
+                                                               <children>
+                                                                  <Label text="Branch :">
+                                                                     <font>
+                                                                        <Font name="Cambria" size="13.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label text="Loan Officer :" GridPane.rowIndex="1">
+                                                                     <font>
+                                                                        <Font name="Cambria" size="13.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label text="Group :" GridPane.rowIndex="2">
+                                                                     <font>
+                                                                        <Font name="Cambria" size="13.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label text="*" textFill="#ee0606" GridPane.columnIndex="1">
+                                                                     <font>
+                                                                        <Font size="15.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label text="*" textFill="#fc0202" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="15.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label text="*" textFill="#f20909" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                     <font>
+                                                                        <Font size="15.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                                     <children>
+                                                                        <Button fx:id="btnGroupMembers1" mnemonicParsing="false" text="Group Members">
+                                                                           <font>
+                                                                              <Font name="Cambria Bold Italic" size="13.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="2.0" top="10.0" />
+                                                                           </HBox.margin>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <ComboBox fx:id="cmbBranch1" prefHeight="31.0" prefWidth="219.0" promptText="---Select Branch---" GridPane.columnIndex="2" />
+                                                                  <ComboBox fx:id="cmbLoanOfficer2" prefHeight="32.0" prefWidth="219.0" promptText="---Select A Branch First---" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                                  <ComboBox fx:id="cmbGroup1" prefHeight="32.0" prefWidth="220.0" promptText="---Select A Loan Officer First---" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                               </children>
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="36.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="220.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="163.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                            </GridPane>
+                                                            <TableView fx:id="tableSelectGroupToTransfer" layoutX="3.0" layoutY="238.0" prefHeight="295.0" prefWidth="1266.0">
+                                                              <columns>
+                                                                <TableColumn fx:id="colClientID" prefWidth="265.0" text="Client ID" />
+                                                                <TableColumn fx:id="colDisplayName" prefWidth="370.0" text="Display Name" />
+                                                                  <TableColumn fx:id="colGroupName" prefWidth="313.0" text="Group Name" />
+                                                                  <TableColumn fx:id="colBranch" prefWidth="315.0" text="Branch" />
+                                                              </columns>
+                                                            </TableView>
+                                                            <Button fx:id="btnNextSelectAction" layoutX="3.0" layoutY="538.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="64.0" text="Next">
+                                                               <font>
+                                                                  <Font name="Cambria Bold Italic" size="13.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </TitledPane>
+                                              <TitledPane fx:id="accSelectAction" animated="false" text="Select Action">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Button fx:id="btnShowChanged" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="121.0" text="Show Changed" />
+                                                            <TableView layoutX="13.0" layoutY="47.0" prefHeight="309.0" prefWidth="1225.0">
+                                                              <columns>
+                                                                <TableColumn fx:id="colClientID1" prefWidth="311.0" text="Client ID" />
+                                                                <TableColumn fx:id="colDisplayName1" prefWidth="291.0" text="Display Name" />
+                                                                  <TableColumn fx:id="colGroupName1" prefWidth="321.0" text="Group Name" />
+                                                                  <TableColumn fx:id="colBranch1" prefWidth="299.0" text="Branch" />
+                                                              </columns>
+                                                            </TableView>
+                                                            <Label layoutX="14.0" layoutY="364.0" prefHeight="24.0" prefWidth="159.0" text="Select Action">
+                                                               <font>
+                                                                  <Font name="Cambria Bold Italic" size="17.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <CheckBox layoutX="117.0" layoutY="388.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="215.0" text="Transfer Group Between Branches">
+                                                               <font>
+                                                                  <Font name="Californian FB Bold" size="12.0" />
+                                                               </font>
+                                                            </CheckBox>
+                                                            <CheckBox fx:id="chkChangeLoanOfficerOfGroup" layoutX="117.0" layoutY="461.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="214.0" text="Change Loan Officer Of Group">
+                                                               <font>
+                                                                  <Font name="Californian FB Bold" size="12.0" />
+                                                               </font>
+                                                            </CheckBox>
+                                                            <ComboBox fx:id="cmbselectBranch" layoutX="117.0" layoutY="418.0" prefHeight="30.0" prefWidth="215.0" promptText="---Select Branch---" />
+                                                            <ComboBox fx:id="cmbselectLoanOfficer" layoutX="117.0" layoutY="490.0" prefHeight="30.0" prefWidth="215.0" promptText="---Select loan Officer---" />
+                                                            <TextArea fx:id="txtareaNotes" layoutX="339.0" layoutY="420.0" prefHeight="100.0" prefWidth="319.0" promptText="Type notes here...">
+                                                               <font>
+                                                                  <Font name="Cambria Bold Italic" size="13.0" />
+                                                               </font>
+                                                            </TextArea>
+                                                            <Label layoutX="339.0" layoutY="397.0" prefHeight="17.0" prefWidth="105.0" text="Notes">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Button fx:id="btnNextOverview" layoutX="117.0" layoutY="530.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="66.0" text="Next">
+                                                               <font>
+                                                                  <Font name="Cambria Bold Italic" size="12.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </TitledPane>
+                                            </panes>
+                                          </Accordion>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="tabGroupStaffTransferPendingApproval" text="Group Staff Transfer Pending Approval">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableSearchGroupStaffTransferPendingApproval" layoutX="6.0" layoutY="66.0" prefHeight="589.0" prefWidth="1260.0">
+                                             <columns>
+                                                <TableColumn fx:id="colGroupName2" prefWidth="266.0" text="Group Name" />
+                                                <TableColumn fx:id="colSubmittedOn1" prefWidth="265.0" text="Submitted On" />
+                                                <TableColumn fx:id="colDestinationOffice1" prefWidth="388.0" text="Destination Office" />
+                                                <TableColumn fx:id="colDestinationGroup1" prefWidth="338.0" text="Destination Group" />
+                                             </columns>
+                                          </TableView>
+                                          <Label layoutX="947.0" layoutY="30.0" text="Search :">
+                                             <font>
+                                                <Font name="Californian FB Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="fieldSearchGroupStaffTransferPendingApproval" layoutX="1000.0" layoutY="26.0" prefHeight="25.0" prefWidth="248.0" promptText="Search here...">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="tabGroupTransferPendingApproval" text="Group Transfer Pending Approval">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView layoutX="8.0" layoutY="64.0" prefHeight="588.0" prefWidth="1260.0">
+                                            <columns>
+                                              <TableColumn fx:id="colGroupName3" prefWidth="266.0" text="Group Name" />
+                                              <TableColumn fx:id="colSubmittedOn" prefWidth="265.0" text="Submitted On" />
+                                                <TableColumn fx:id="colDestinationOffice" prefWidth="303.0" text="Destination Office" />
+                                                <TableColumn fx:id="colDestinationGroup" prefWidth="278.0" text="Destination Group" />
+                                                <TableColumn fx:id="colAction" prefWidth="144.0" text="Action" />
+                                            </columns>
+                                          </TableView>
+                                          <TextField fx:id="fieldSearchgroupTransferPendungApproval" layoutX="1028.0" layoutY="23.0" prefHeight="25.0" prefWidth="230.0" promptText="Search here...">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="974.0" layoutY="27.0" text="Search :">
+                                             <font>
+                                                <Font name="Californian FB Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab fx:id="tabGroupTransferHistory" text="Group Transfer History">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableSearchGroupStaffTransferPendingApproval1" layoutY="58.0" prefHeight="594.0" prefWidth="1260.0">
+                                             <columns>
+                                                <TableColumn fx:id="cocolApproveOn" prefWidth="266.0" text="Approve On" />
+                                                <TableColumn fx:id="colGroupName11" prefWidth="265.0" text="Group Name" />
+                                                <TableColumn fx:id="colTransferFromOffice" prefWidth="282.0" text="Transfer From Office" />
+                                                <TableColumn fx:id="colTransferToOffice" prefWidth="301.0" text="Transfer To Office" />
+                                                <TableColumn fx:id="colAction1" prefWidth="142.0" text="Action" />
+                                             </columns>
+                                          </TableView>
+                                          <TextField fx:id="fieldSearchTransferHistory" layoutX="1041.0" layoutY="21.0" prefHeight="29.0" prefWidth="217.0" promptText="Search here...">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="985.0" layoutY="27.0" text="Search :">
+                                             <font>
+                                                <Font name="Californian FB Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="groupPostingTab" text="Group Posting ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="1.0" layoutY="1.0" prefHeight="686.0" prefWidth="1272.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="groupsPostingTab" text="Group Posting">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="1.0" layoutY="10.0" text="Enter Group Posting">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="28.0" />
+                                             </font>
+                                          </Label>
+                                          <Accordion layoutY="45.0" prefHeight="591.0" prefWidth="1272.0">
+                                             <panes>
+                                                <TitledPane fx:id="selectGroupAccord" animated="false" text="Select Group">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="499.0" prefWidth="1270.0">
+                                                         <children>
+                                                            <Label layoutX="51.0" layoutY="295.0" text="Description :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="25.0" layoutY="267.0" text="Repayment Date :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="37.0" layoutY="231.0" text="Payment Type :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="48.0" layoutY="161.0" text="Group Name :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="50.0" layoutY="115.0" text="Loan Officer :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="135.0" layoutY="204.0" text="Group Posting Setup">
+                                                               <font>
+                                                                  <Font name="Cambria Bold Italic" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <RadioButton fx:id="radioFetchByLoanOfficer" layoutX="135.0" layoutY="34.0" mnemonicParsing="false" text="Fetch Posting By Loan Officer">
+                                                               <font>
+                                                                  <Font name="Cambria Bold" size="13.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="radioFetchByGroup" layoutX="135.0" layoutY="73.0" mnemonicParsing="false" text="Fetch Posting By Group">
+                                                               <font>
+                                                                  <Font name="Cambria Bold" size="13.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <ComboBox fx:id="cmbLoanOfficer1" layoutX="133.0" layoutY="111.0" prefHeight="25.0" prefWidth="217.0" promptText="---Select Loan Officer---" />
+                                                            <ComboBox fx:id="cmbGroupName" layoutX="133.0" layoutY="157.0" prefHeight="25.0" prefWidth="219.0" promptText="---Select Group Name---" />
+                                                            <ComboBox fx:id="cmbGroupsName" layoutX="135.0" layoutY="233.0" prefHeight="25.0" prefWidth="216.0" promptText="---Select Payment type---" />
+                                                            <DatePicker fx:id="dtpRepaymentDate" layoutX="137.0" layoutY="269.0" prefHeight="25.0" prefWidth="214.0" promptText="Repayment Date" />
+                                                            <TextArea fx:id="areaDescription" layoutX="135.0" layoutY="301.0" prefHeight="84.0" prefWidth="217.0" promptText="Type description here...">
+                                                               <font>
+                                                                  <Font name="Cambria Italic" size="13.0" />
+                                                               </font>
+                                                            </TextArea>
+                                                            <TextField fx:id="fieldTotalAmountOfPayment" layoutX="135.0" layoutY="398.0" prefHeight="18.0" prefWidth="218.0" promptText="total amount of payment">
+                                                               <font>
+                                                                  <Font name="Cambria Italic" size="13.0" />
+                                                               </font>
+                                                            </TextField>
+                                                            <Label layoutX="19.0" layoutY="397.0" text="Payment Amount :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Button fx:id="btnNextEnterPayment" layoutX="135.0" layoutY="432.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="82.0" text="Next">
+                                                               <font>
+                                                                  <Font name="Cambria Bold Italic" size="14.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane fx:id="enterPaymentAccord" animated="false" text="Enter Payment">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TableView fx:id="tableEnterPayment" layoutX="3.0" layoutY="73.0" prefHeight="399.0" prefWidth="1264.0">
+                                                              <columns>
+                                                                <TableColumn fx:id="colProduct" prefWidth="318.0" text="Product" />
+                                                                <TableColumn fx:id="colBalance" prefWidth="327.0" text="Balance" />
+                                                                  <TableColumn fx:id="colExpectedPayment" prefWidth="309.0" text="Expected Payment" />
+                                                                  <TableColumn fx:id="colActualPayment" prefWidth="309.0" text="Actual Payment" />
+                                                              </columns>
+                                                            </TableView>
+                                                            <Label layoutX="14.0" layoutY="16.0" text="Enter Payment Details">
+                                                               <font>
+                                                                  <Font name="Cambria Bold Italic" size="26.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Button layoutX="2.0" layoutY="476.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="76.0" text="Next">
+                                                               <font>
+                                                                  <Font name="Cambria Bold Italic" size="14.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children></AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane fx:id="overviewAccord" animated="false" text="Overview">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Label layoutX="14.0" layoutY="14.0" prefHeight="33.0" prefWidth="317.0" text="Group Posting Overview">
+                                                               <font>
+                                                                  <Font name="Cambria Bold Italic" size="27.0" />
+                                                               </font></Label>
+                                                         </children></AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                             </panes>
+                                          </Accordion>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="pendingGroupPostingTab" text="Pending Group Posting">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutY="16.0" text="Pending Group Posting">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="28.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="tablePendingGroupPosting" layoutY="54.0" prefHeight="601.0" prefWidth="1272.0">
+                                            <columns>
+                                              <TableColumn fx:id="colLoanOficerName" prefWidth="222.0" text="Loan Officer Name" />
+                                              <TableColumn fx:id="colRegisteredBy" prefWidth="248.0" text="Registered By" />
+                                                <TableColumn fx:id="colregisteredOn" prefWidth="279.0" text="Registered On" />
+                                                <TableColumn fx:id="colDescription" prefWidth="370.0" text="Description" />
+                                                <TableColumn fx:id="colview" prefWidth="152.0" text="View" />
+                                              </columns>
+                                          </TableView>
+                                          <Label layoutX="947.0" layoutY="25.0" text="Search :">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="fieldSearch" layoutX="997.0" layoutY="21.0" prefHeight="25.0" prefWidth="274.0" promptText="Search by officer name">
+                                             <font>
+                                                <Font name="Cambria Italic" size="13.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="groupPostingHistoryTab" text="Group Posting History">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="fieldSearchGroupPostingHistory" layoutX="997.0" layoutY="23.0" prefHeight="25.0" prefWidth="274.0" promptText="Search by officer name">
+                                             <font>
+                                                <Font name="Cambria Italic" size="13.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="945.0" layoutY="28.0" text="Search :">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="tableGroupPostingHistory" layoutY="54.0" prefHeight="601.0" prefWidth="1272.0">
+                                             <columns>
+                                                <TableColumn fx:id="colLoanOficerName1" prefWidth="222.0" text="Loan Officer Name" />
+                                                <TableColumn fx:id="colRegisteredBy1" prefWidth="248.0" text="Registered By" />
+                                                <TableColumn fx:id="colregisteredOn1" prefWidth="256.0" text="Registered On" />
+                                                <TableColumn fx:id="colDescription1" prefWidth="298.0" text="Description" />
+                                                <TableColumn fx:id="colStatus" prefWidth="122.0" text="Status" />
+                                                <TableColumn fx:id="colView" prefWidth="124.0" text="View" />
+                                             </columns>
+                                          </TableView>
+                                          <Label layoutY="14.0" text="Group Posting History">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="28.0" />
+                                             </font>
+                                          </Label>
+                                       </children></AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="groupsTab" text="Groups">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="4.0" layoutY="3.0" prefHeight="679.0" prefWidth="1265.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="tabGroups" text="Groups">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableGroups" layoutY="130.0" prefHeight="518.0" prefWidth="1262.0">
+                                             <columns>
+                                                <TableColumn fx:id="colExternalID" prefWidth="279.0" text="External ID" />
+                                                <TableColumn fx:id="colgroupName" prefWidth="261.0" text="Group Name" />
+                                                <TableColumn fx:id="colBranchName" prefWidth="221.0" text="Branch Name" />
+                                                <TableColumn fx:id="colLoanOfficer" prefWidth="341.0" text="Loan Officer" />
+                                                <TableColumn fx:id="colAction2" prefWidth="155.0" text="View" />
+                                             </columns>
+                                          </TableView>
+                                          <Button layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="146.0" text="Create A Group">
+                                             <font>
+                                                <Font name="Californian FB Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                          <Label layoutX="14.0" layoutY="14.0" text="Groups">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="fieldSerachGroups" layoutX="1018.0" layoutY="67.0" prefHeight="27.0" prefWidth="231.0" promptText="Search here...">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="972.0" layoutY="72.0" text="Search :">
+                                             <font>
+                                                <Font name="Californian FB Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="tabPendingApproval" text="Pending Approval">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="21.0" text="Groups Pending Approval">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="26.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="tableGroupsPendingApproval" layoutX="2.0" layoutY="109.0" prefHeight="536.0" prefWidth="1263.0">
+                                            <columns>
+                                              <TableColumn fx:id="colGroupsGroupName" prefWidth="314.0" text="Group Name" />
+                                              <TableColumn fx:id="colGroupsExternalID2" prefWidth="274.0" text="External ID" />
+                                                <TableColumn fx:id="colGroupsRegistrationDate" prefWidth="266.0" text="Registration Date" />
+                                                <TableColumn fx:id="colGroupsLoanOfficer2" prefWidth="265.0" text="Loan Officer" />
+                                                <TableColumn fx:id="colGroupsAction" prefWidth="128.0" text="Action" />
+                                            </columns>
+                                          </TableView>
+                                          <TextField fx:id="fieldSearchPendingApproval" layoutX="1010.0" layoutY="64.0" prefHeight="30.0" prefWidth="241.0" promptText="Search here...">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="963.0" layoutY="70.0" text="Search :">
+                                             <font>
+                                                <Font name="Californian FB Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="tabClosedGroups" text="Closed Groups">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="tableClosedGroups" layoutX="1.0" layoutY="81.0" prefHeight="568.0" prefWidth="1263.0">
+                                            <columns>
+                                              <TableColumn fx:id="colGroupNameClosedGroups" prefWidth="339.0" text="Group Name" />
+                                              <TableColumn fx:id="colExternalIDClosedGroups" prefWidth="262.0" text="External ID" />
+                                                <TableColumn fx:id="colBranchNameClosedGroups" prefWidth="315.0" text="Branch Name" />
+                                                <TableColumn fx:id="colLoanOfficerClosedgroups" prefWidth="345.0" text="Loan Officer" />
+                                            </columns>
+                                          </TableView>
+                                          <Label layoutX="14.0" layoutY="23.0" text="Closed Groups">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="985.0" layoutY="49.0" text="Search :">
+                                             <font>
+                                                <Font name="Californian FB Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField layoutX="1036.0" layoutY="45.0" prefHeight="25.0" prefWidth="224.0" promptText="Search here...">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="13.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="centersTab" text="Centers">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="2.0" layoutY="2.0" prefHeight="683.0" prefWidth="1272.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="tabActive" text="Active">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="14.0" text="Centers">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="27.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="btnCreateCenter" layoutX="14.0" layoutY="56.0" mnemonicParsing="false" onAction="#createCenter" prefHeight="28.0" prefWidth="145.0" text="Create Center">
+                                             <font>
+                                                <Font name="Californian FB Bold" size="13.0" />
+                                             </font>
+                                          </Button>
+                                          <TableView fx:id="tableActive" layoutX="4.0" layoutY="115.0" prefHeight="536.0" prefWidth="1264.0">
+                                            <columns>
+                                              <TableColumn fx:id="colRegistrationNumberActive" prefWidth="282.0" text="Registration Number" />
+                                              <TableColumn fx:id="colCenterName" prefWidth="245.0" text="Center Name" />
+                                                <TableColumn fx:id="colBranchActive" prefWidth="294.0" text="Branch" />
+                                                <TableColumn fx:id="colLoanOfficerActive" prefWidth="285.0" text="Loan Officer" />
+                                                <TableColumn fx:id="colActionActive" prefWidth="157.0" text="Action" />
+                                            </columns>
+                                          </TableView>
+                                          <Label layoutX="994.0" layoutY="79.0" text="Search :">
+                                             <font>
+                                                <Font name="Californian FB Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="fieldSearchActive" layoutX="1039.0" layoutY="72.0" prefHeight="28.0" prefWidth="224.0" promptText="Search here...">
+                                             <font>
+                                                <Font name="Cambria" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="tabPendingApproval1" text="Pending Approval">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView layoutX="2.0" layoutY="71.0" prefHeight="582.0" prefWidth="1265.0">
+                                            <columns>
+                                              <TableColumn prefWidth="301.0" text="C1" />
+                                              <TableColumn prefWidth="355.0" text="C2" />
+                                                <TableColumn prefWidth="292.0" text="Column X" />
+                                                <TableColumn prefWidth="313.0" text="Column X" />
+                                            </columns>
+                                          </TableView>
+                                          <TextField fx:id="fieldSearPendingApproval" layoutX="1040.0" layoutY="32.0" prefHeight="30.0" prefWidth="226.0" promptText="Search here...">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="13.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="984.0" layoutY="38.0" text="Search :">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="tabClosed" text="Closed">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView layoutY="97.0" prefHeight="556.0" prefWidth="1272.0">
+                                            <columns>
+                                              <TableColumn prefWidth="283.0" text="C1" />
+                                              <TableColumn prefWidth="300.0" text="C2" />
+                                                <TableColumn prefWidth="294.0" text="Column X" />
+                                                <TableColumn prefWidth="394.0" text="Column X" />
+                                            </columns>
+                                          </TableView>
+                                          <TextField fx:id="fieldSearchClosed" layoutX="1071.0" layoutY="50.0" prefHeight="29.0" prefWidth="194.0" promptText="Search here..." />
+                                          <Label layoutX="1020.0" layoutY="56.0" text="Search :">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children></AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="createGroupTab" text="Create Groups">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="43.0" layoutY="92.0" prefHeight="203.0" prefWidth="509.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="36.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="220.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="163.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Branch :">
+                                 <font>
+                                    <Font name="Cambria" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Loan Officer :" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Group :" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label text="*" textFill="#ee0606" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="*" textFill="#fc0202" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="*" textFill="#f20909" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <children>
+                                    <Button fx:id="btnGroupMembers" mnemonicParsing="false" text="Group Members">
+                                       <font>
+                                          <Font name="Cambria Bold Italic" size="13.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="2.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <ComboBox fx:id="cmbBranch" prefHeight="31.0" prefWidth="219.0" promptText="---Select Branch---" GridPane.columnIndex="2" />
+                              <ComboBox fx:id="cmbLoanOfficer" prefHeight="32.0" prefWidth="219.0" promptText="---Select A Branch First---" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="cmbGroup" prefHeight="32.0" prefWidth="220.0" promptText="---Select A Loan Officer First---" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

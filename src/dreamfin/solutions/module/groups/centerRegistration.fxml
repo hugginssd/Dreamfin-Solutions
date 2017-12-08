@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="449.0" prefWidth="1060.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dreamfin.solutions.CenterRegistrationController">
+    <stylesheets>
+        <URL value="@/resources/css/centerregistration.css" />
+    </stylesheets>
+   <children>
+      <TitledPane fx:id="tabCenterRegistration" animated="false" layoutX="1.0" layoutY="1.0" prefHeight="448.0" prefWidth="1068.0" text="Center Registration">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="fieldCenterName" layoutX="143.0" layoutY="37.0" prefHeight="30.0" prefWidth="258.0" promptText="Center name">
+                     <font>
+                        <Font name="Cambria Italic" size="13.0" />
+                     </font></TextField>
+                  <ComboBox fx:id="cmbBranchName" layoutX="143.0" layoutY="75.0" prefHeight="29.0" prefWidth="257.0" promptText="---Select branch name---" />
+                  <ComboBox fx:id="cmbLoanOfficer" layoutX="144.0" layoutY="118.0" prefHeight="30.0" prefWidth="257.0" promptText="---Select loan officer---" />
+                  <TextField fx:id="fieldRegistrationNumber" layoutX="144.0" layoutY="161.0" prefHeight="30.0" prefWidth="257.0" promptText="Registration number">
+                     <font>
+                        <Font name="Cambria Italic" size="13.0" />
+                     </font></TextField>
+                  <DatePicker fx:id="dtpRegistrationDate" layoutX="144.0" layoutY="201.0" prefHeight="28.0" prefWidth="258.0" promptText="Registration date" />
+                  <TextField fx:id="fieldRegistration" layoutX="144.0" layoutY="241.0" prefHeight="29.0" prefWidth="257.0" promptText="Registration">
+                     <font>
+                        <Font name="Cambria Italic" size="13.0" />
+                     </font></TextField>
+                  <ComboBox fx:id="cmbMeetingDay" layoutX="645.0" layoutY="67.0" prefHeight="30.0" prefWidth="247.0" promptText="---Select meeting day---" />
+                  <ComboBox fx:id="cmbMeetingFrequency" layoutX="643.0" layoutY="105.0" prefHeight="30.0" prefWidth="250.0" promptText="---Select meeting frequency---" />
+                  <TextField fx:id="fieldCompanySize" layoutX="644.0" layoutY="144.0" prefHeight="29.0" prefWidth="250.0" promptText="Company size">
+                     <font>
+                        <Font name="Cambria Italic" size="13.0" />
+                     </font></TextField>
+                  <TextArea fx:id="areaMobileNumber" layoutX="144.0" layoutY="283.0" prefHeight="88.0" prefWidth="258.0" promptText="Mobile number here...">
+                     <font>
+                        <Font name="Cambria Italic" size="13.0" />
+                     </font></TextArea>
+                  <TextArea fx:id="areaAddress" layoutX="643.0" layoutY="181.0" prefHeight="88.0" prefWidth="252.0" promptText="Type address here...">
+                     <font>
+                        <Font name="Cambria Italic" size="13.0" />
+                     </font></TextArea>
+                  <TextArea fx:id="areaHRName" layoutX="643.0" layoutY="278.0" prefHeight="88.0" prefWidth="253.0" promptText="Type hr name here...">
+                     <font>
+                        <Font name="Cambria Italic" size="13.0" />
+                     </font></TextArea>
+                  <Label layoutX="48.0" layoutY="44.0" text="Center Name :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="45.0" layoutY="79.0" text="Branch Name :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="52.0" layoutY="124.0" text="Loan Officer :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="3.0" layoutY="165.0" text="Registration Number :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="23.0" layoutY="203.0" text="Registration Date :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="50.0" layoutY="240.0" text="Registration :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="31.0" layoutY="283.0" text="Mobile Number :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="559.0" layoutY="70.0" text="Meeting Day :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="519.0" layoutY="111.0" text="Meeting Frequency :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="547.0" layoutY="150.0" text="Company Size :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="579.0" layoutY="183.0" text="Address :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="567.0" layoutY="283.0" text="HR Name :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font></Label>
+                  <Button fx:id="btnCreateCenterRegistration" layoutX="144.0" layoutY="384.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="111.0" text="Create Center">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="fieldMeetingLocation" layoutX="643.0" layoutY="31.0" prefHeight="30.0" prefWidth="248.0" promptText="Meeting location">
+                     <font>
+                        <Font name="Cambria Italic" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="533.0" layoutY="32.0" text="Meeting Location :">
+                     <font>
+                        <Font name="Cambria" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="127.0" layoutY="43.0" text="*" textFill="#f50b0b">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="127.0" layoutY="78.0" text="*" textFill="#f50b0b">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="125.0" layoutY="164.0" text="*" textFill="#f50b0b">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="125.0" layoutY="200.0" text="*" textFill="#f50b0b">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="125.0" layoutY="281.0" text="*" textFill="#f50b0b">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="639.0" prefWidth="1225.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="dreamfin.solutions.module.reports.GroupReportsController">
+    <stylesheets>
+        <URL value="@groupreports.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Group Reports" textFill="#1515ab">
+         <font>
+            <Font name="Cambria Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="60.0" text="Group Breakdown Reports" textFill="#0aae36">
+         <font>
+            <Font name="Cambria Bold" size="15.0" />
+         </font>
+      </Label>
+      <TreeTableView fx:id="treetableGroupReports" layoutX="8.0" layoutY="109.0" prefHeight="342.0" prefWidth="859.0">
+         <columns>
+            <TreeTableColumn fx:id="colName" prefWidth="207.0" text="Name" />
+            <TreeTableColumn fx:id="colCategory" prefWidth="215.0" text="Category" />
+            <TreeTableColumn fx:id="colDescription" prefWidth="325.0" text="Description" />
+            <TreeTableColumn fx:id="colRunReport" prefWidth="110.0" text="Run Report" />
+         </columns>
+      </TreeTableView>
+      <TableView layoutX="9.0" layoutY="134.0" prefHeight="461.0" prefWidth="1213.0">
+        <columns>
+          <TableColumn prefWidth="178.0" text="Group Name" />
+          <TableColumn prefWidth="99.0" text="Loan Officer" />
+            <TableColumn prefWidth="115.0" text="Members" />
+            <TableColumn prefWidth="74.0" text="Funded">
+               <columns>
+                  <TableColumn prefWidth="52.0" text="#" />
+                  <TableColumn prefWidth="52.0" text="\%" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="187.0" text="Female">
+               <columns>
+                  <TableColumn prefWidth="46.0" text="#" />
+                  <TableColumn prefWidth="43.0" text="\%" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="95.0" text="Avg Loan Size">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Amount" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="99.0" text="Total OLB">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Amount" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="144.0" text="PAR &gt; 1 day">
+               <columns>
+                  <TableColumn prefWidth="83.0" text="Amount" />
+                  <TableColumn prefWidth="40.0" text="\%" />
+                  <TableColumn prefWidth="45.0" text="#" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="214.0" text="PAR &gt; 30 days">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Amount" />
+                  <TableColumn prefWidth="40.0" text="\%" />
+                  <TableColumn prefWidth="42.0" text="#" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="93.0" text="Savings">
+               <columns>
+                  <TableColumn prefWidth="68.0" text="Compulsory" />
+                  <TableColumn prefWidth="82.0" text="Voluntary" />
+               </columns>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <Button fx:id="btnBack" layoutX="1157.0" layoutY="600.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="65.0" text="Back">
+         <font>
+            <Font name="Cambria Bold Italic" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="14.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/icons/left_arrow-32.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <DatePicker layoutX="1062.0" layoutY="11.0" prefHeight="25.0" prefWidth="160.0" />
+      <ComboBox fx:id="cmbSelectLoanOfficer" layoutX="1062.0" layoutY="41.0" prefHeight="25.0" prefWidth="160.0" promptText="---Branch---" />
+      <ComboBox fx:id="cmbSelectLoanOfficer" layoutX="1062.0" layoutY="69.0" prefHeight="25.0" prefWidth="160.0" promptText="---Loan Officer---" />
+      <Button fx:id="btnRunReport" layoutX="1062.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Run Report">
+         <font>
+            <Font name="Cambria Bold" size="10.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnPrint" layoutX="1156.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Print">
+         <font>
+            <Font name="Cambria Bold" size="10.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

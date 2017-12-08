@@ -1,0 +1,11 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+.combo-box{
+    -fx-font-style:italic;
+    -fx-font-family:Cambria;
+}

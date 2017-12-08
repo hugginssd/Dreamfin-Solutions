@@ -1,0 +1,63 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+#btnPreviousClientInfo{
+    -fx-background-color:#3333ff;
+    -fx-text-alignment:left;
+    -fx-text-fill:#ffffff;
+}
+#btnNextClientInfo{
+
+    -fx-background-color:#3333ff;
+    -fx-text-alignment: left;
+    -fx-text-fill:#ffffff;
+}
+#btnNext{
+    -fx-background-color:#3333ff;
+    -fx-text-alignment: left;
+    -fx-text-fill:#ffffff;
+}
+#anchorPaneClientInfo{
+    -fx-background-color:#ccff66;
+
+}
+#anchorPaneClientId{
+    -fx-background-color:#ccff66;
+
+}
+#anchorPaneNewClient{
+    -fx-background-color:#ccff66;
+}
+#anchorPaneEmploymentDetails{
+    -fx-background-color:#ccff66;
+}
+#anchorPaneNextOfKin{
+    -fx-background-color:#ccff66;
+}
+#anchorPaneOverview{
+    -fx-background-color:#ccff66;
+}
+#btnAdd{
+    -fx-background-color:#3333ff;
+    -fx-text-alignment: left;
+    -fx-text-fill:#ffffff;  
+}
+#btnNextClientId{
+    -fx-background-color:#3333ff;
+    -fx-text-alignment: right;
+    -fx-text-fill:#ffffff;  
+}
+#btnPreviousClientId{
+    -fx-background-color:#3333ff;
+    -fx-text-alignment: left;
+    -fx-text-fill:#ffffff;  
+}
+.tab-pane{
+    -fx-font-family:Cambria;
+    -fx-font-size: 11pt;
+}

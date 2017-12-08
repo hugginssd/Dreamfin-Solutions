@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="748.0" prefWidth="1334.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dreamfin.solutions.FXMLDocumentController">
+   <children>
+      <MenuBar fx:id="menuBar" prefHeight="27.0" prefWidth="1334.0">
+        <menus>
+            <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+              <items>
+                  <MenuItem fx:id="logoutMenuItem" mnemonicParsing="false" onAction="#logoutDreamfin" text="Logout" />
+                <MenuItem fx:id="close" mnemonicParsing="false" onAction="#closeDreamfin" text="Close" />
+              </items>
+            </Menu>
+            <Menu fx:id="menuDashboard" mnemonicParsing="false" text="Dashboard">
+               <items>
+                  <MenuItem fx:id="menuItemSystemGraphs" mnemonicParsing="false" onAction="#graphs" text="System Graphs" />
+               </items></Menu>
+          <Menu fx:id="clientsMenu" mnemonicParsing="false" text="Clients">
+            <items>
+              <MenuItem fx:id="transferClientMenuItem" mnemonicParsing="false" onAction="#loadClients" text="Transfer Client" />
+                  <MenuItem fx:id="clientsMenuItem" mnemonicParsing="false" onAction="#loadClients" text="Clients" />
+                  <MenuItem fx:id="registerClientMenuItem" mnemonicParsing="false" onAction="#loadClients" text="Register Client" />
+            </items>
+          </Menu>
+          <Menu fx:id="groupsMenu" mnemonicParsing="false" text="Groups">
+            <items>
+              <MenuItem fx:id="groupPostingMenuItem" mnemonicParsing="false" onAction="#addGroups" text="Group Posting" />
+                  <MenuItem fx:id="groupsMenuItem" mnemonicParsing="false" onAction="#addGroups" text="Groups" />
+                  <MenuItem fx:id="createGroupsMenuItem" mnemonicParsing="false" onAction="#addGroups" text="Create Groups" />
+                  <MenuItem fx:id="centersMenuItem" mnemonicParsing="false" onAction="#addGroups" text="Centers" />
+                  <MenuItem fx:id="transferGroupsMenuItem" mnemonicParsing="false" onAction="#addGroups" text="Transfer Groups" />
+            </items>
+          </Menu>
+          <Menu fx:id="productsMenu" mnemonicParsing="false" text="Products">
+               <items>
+                  <MenuItem fx:id="fundsTransferMenuItem" mnemonicParsing="false" onAction="#addProducts" text="Funds Transfer" />
+                  <MenuItem fx:id="standingInstructionMenuItem" mnemonicParsing="false" text="Standing Instruction" />
+                  <MenuItem fx:id="savingsMenuItem" mnemonicParsing="false" text="Savings " />
+                  <MenuItem fx:id="loansMenuItem" mnemonicParsing="false" text="Loans" />
+               </items>
+          </Menu>
+            <Menu fx:id="reportsMenu" mnemonicParsing="false" text="Reports">
+              <items>
+                <MenuItem fx:id="clientsReportsMenuItem" mnemonicParsing="false" onAction="#clientReports" text="Client Reports" />
+                  <MenuItem fx:id="groupReportsMenuItem" mnemonicParsing="false" onAction="#groupReports" text="Group Reports" />
+                  <MenuItem fx:id="savingsReportsMenuItem" mnemonicParsing="false" text="Savings Reports" />
+                  <MenuItem fx:id="loanReportsMenuItem" mnemonicParsing="false" text="Loan Reports" />
+                  <MenuItem fx:id="organizationReportsMenuItem" mnemonicParsing="false" text="Organisation Reports" />
+                  <MenuItem fx:id="financialReportsMenuItem" mnemonicParsing="false" text="Financial Reports" />
+                  <MenuItem fx:id="reportsSchedulerMenuItem" mnemonicParsing="false" text="Reports Scheduler" />
+                  <MenuItem fx:id="dataExportMenuItem" mnemonicParsing="false" text="Data Export" />
+              </items>
+            </Menu>
+            <Menu fx:id="accountingMenu" mnemonicParsing="false" text="Accounting">
+              <items>
+                <MenuItem fx:id="tellerManagementMenuItem" mnemonicParsing="false" text="Teller Management" />
+                  <MenuItem fx:id="registrationMenuItem" mnemonicParsing="false" text="Reconciliation" />
+                  <MenuItem fx:id="closePeriodsMenuItem" mnemonicParsing="false" text="Close Periods" />
+                  <MenuItem fx:id="journalsMenuItem" mnemonicParsing="false" text="Journals" />
+                  <MenuItem fx:id="chartOfAccountsMenuItem" mnemonicParsing="false" text="Chart of Accounts" />
+                  <MenuItem fx:id="periodAccrualMenuItem" mnemonicParsing="false" text="Period Accrual" />
+                  <MenuItem fx:id="accountingExportMenuItem" mnemonicParsing="false" text="Accounting Export" />
+              </items>
+            </Menu>
+            <Menu fx:id="configurationMenu" mnemonicParsing="false" text="Configuration">
+              <items>
+                  <MenuItem fx:id="accessManagementMenuItem" mnemonicParsing="false" text="Access Management" />
+                <MenuItem fx:id="productsMenuItem" mnemonicParsing="false" text="Products" />
+                  <MenuItem fx:id="branchesMenuItem" mnemonicParsing="false" text="Branches" />
+                  <MenuItem fx:id="advancedMenuItem" mnemonicParsing="false" text="Advanced" />
+                  <MenuItem fx:id="mmtServicesMenuItem" mnemonicParsing="false" text="MMT Services" />
+                  <MenuItem fx:id="smsModuleMenuItem" mnemonicParsing="false" text="SMS Module" />
+                  <MenuItem fx:id="auditMenuItem" mnemonicParsing="false" text="Audit" />
+                  <MenuItem fx:id="emailModuleMenuItem" mnemonicParsing="false" text="Email Module" />
+                  <MenuItem fx:id="customizationMenuItem" mnemonicParsing="false" text="Customisation" />
+              </items>
+            </Menu>
+            <Menu fx:id="tasksMenu" mnemonicParsing="false" text="Tasks">
+              <items>
+                <MenuItem fx:id="pendingApprovalMenuItem" mnemonicParsing="false" text="Pending Approval" />
+                  <MenuItem fx:id="myActionsMenuItem" mnemonicParsing="false" text="My Actions" />
+              </items>
+            </Menu>
+            <Menu fx:id="helpMenuItem" mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem fx:id="aboutUsMenuItem" mnemonicParsing="false" text="About Us" />
+                  <MenuItem fx:id="contactUsMenuItem" mnemonicParsing="false" onAction="#contactUs" text="Contact Us" />
+                  <MenuItem fx:id="licenseMenuItem" mnemonicParsing="false" text="License" />
+                  <MenuItem fx:id="faqMenuItem" mnemonicParsing="false" text="FAQ" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
