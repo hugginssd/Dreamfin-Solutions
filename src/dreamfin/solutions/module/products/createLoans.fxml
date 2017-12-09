@@ -1,10 +1,554 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="793.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="dreamfin.solutions.module.products.CreateLoansController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="478.0" prefWidth="830.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="dreamfin.solutions.module.products.CreateLoansController">
     <stylesheets>
         <URL value="@/resources/css/createloans.css" />
     </stylesheets>
+   <children>
+      <TabPane layoutX="1.0" layoutY="1.0" prefHeight="508.0" prefWidth="1195.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="tabLoans1" text="Loans">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="1.0" layoutY="2.0" prefHeight="474.0" prefWidth="1195.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="tabCreateLoans" text="Create Loans">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="8.0" layoutY="2.0" text="Loans">
+                                             <font>
+                                                <Font name="Cambria Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="932.0" layoutY="7.0" text="Search :">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="fieldSearchLoans" layoutX="979.0" layoutY="3.0" prefHeight="25.0" prefWidth="213.0" promptText="Search here...">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <TableView layoutX="3.0" layoutY="32.0" prefHeight="411.0" prefWidth="768.0">
+                                             <columns>
+                                                <TableColumn fx:id="colClientID" prefWidth="153.99996948242188" text="Client ID" />
+                                                <TableColumn fx:id="colDisplayName" prefWidth="170.0" text="Display Name" />
+                                                <TableColumn fx:id="colBranch" prefWidth="193.0" text="Branch" />
+                                                <TableColumn fx:id="colGroup" prefWidth="166.0" text="Group" />
+                                                <TableColumn fx:id="colSelect" prefWidth="84.0" text="Select" />
+                                             </columns>
+                                          </TableView>
+                                          <TableView layoutX="779.0" layoutY="33.0" prefHeight="410.0" prefWidth="413.0">
+                                             <columns>
+                                                <TableColumn prefWidth="339.0" text="Name" />
+                                                <TableColumn prefWidth="73.0" text="Select" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="colAdvanced" text="Advanced">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TabPane layoutX="1.0" layoutY="1.0" prefHeight="443.0" prefWidth="1195.0" tabClosingPolicy="UNAVAILABLE">
+                                            <tabs>
+                                              <Tab fx:id="tabTerms" text="Terms">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Label layoutX="56.0" layoutY="44.0" text="Loan Size :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="12.0" layoutY="75.0" text="Origin of Funding :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="47.0" layoutY="106.0" text="Long Term :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="9.0" layoutY="139.0" text="Repayment Every :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="42.0" layoutY="174.0" text="Intrest Rate :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="2.0" layoutY="207.0" text="Disbursement Rate :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField layoutX="134.0" layoutY="40.0" prefHeight="25.0" prefWidth="224.0" promptText="US$ 500.00" />
+                                                            <ComboBox layoutX="134.0" layoutY="72.0" prefHeight="25.0" prefWidth="224.0" promptText="----Origin Of Funding---" />
+                                                            <TextField layoutX="134.0" layoutY="103.0" prefHeight="25.0" prefWidth="81.0" promptText="12" />
+                                                            <ComboBox layoutX="225.0" layoutY="103.0" prefHeight="25.0" prefWidth="134.0" promptText="---Span---" />
+                                                            <TextField layoutX="134.0" layoutY="136.0" prefHeight="25.0" prefWidth="81.0" promptText="1" />
+                                                            <ComboBox layoutX="225.0" layoutY="136.0" prefHeight="25.0" prefWidth="134.0" promptText="---Span---" />
+                                                            <TextField layoutX="134.0" layoutY="170.0" prefHeight="25.0" prefWidth="81.0" promptText="20" />
+                                                            <Label layoutX="225.0" layoutY="174.0" text="Per Year">
+                                                               <font>
+                                                                  <Font name="Cambria" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <DatePicker layoutX="134.0" layoutY="203.0" prefHeight="25.0" prefWidth="223.0" promptText="10-12-2017" />
+                                                            <Label layoutX="114.0" layoutY="103.0" text="*" textFill="#eb0505">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="115.0" layoutY="136.0" text="*" textFill="#eb0505">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="115.0" layoutY="171.0" text="*" textFill="#eb0505">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="115.0" layoutY="204.0" text="*" textFill="#eb0505">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="114.0" layoutY="39.0" text="*" textFill="#eb0505">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Button layoutX="134.0" layoutY="236.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="83.0" text="Next">
+                                                               <font>
+                                                                  <Font name="Cambria Bold Italic" size="12.0" />
+                                                               </font>
+                                                            </Button>
+                                                            <Label layoutX="374.0" layoutY="44.0" text="This field cannot be left blank.">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                              <Tab fx:id="tabSettings" text="Settings">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <Label layoutX="113.0" layoutY="43.0" text="Loan Officer :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="105.0" layoutY="80.0" text="Loan Purpose :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="1.0" layoutY="115.0" prefHeight="25.0" prefWidth="190.0" text="Auto Create Standing Instruction :" wrapText="true">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="51.0" layoutY="163.0" text="Linked Savings Account :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="33.0" layoutY="205.0" text="Repayments Starting From :">
+                                                               <font>
+                                                                  <Font name="Cambria" size="13.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <ComboBox layoutX="201.0" layoutY="39.0" prefHeight="25.0" prefWidth="210.0" />
+                                                            <ComboBox layoutX="201.0" layoutY="76.0" prefHeight="25.0" prefWidth="210.0" />
+                                                            <ComboBox layoutX="201.0" layoutY="116.0" prefHeight="25.0" prefWidth="210.0" />
+                                                            <ComboBox layoutX="201.0" layoutY="159.0" prefHeight="25.0" prefWidth="210.0" />
+                                                            <DatePicker layoutX="201.0" layoutY="201.0" prefHeight="25.0" prefWidth="195.0" />
+                                                            <Button fx:id="btnPrevious" layoutX="201.0" layoutY="237.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="86.0" text="Previous" />
+                                                            <Button fx:id="btnNext" layoutX="311.0" layoutY="237.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="86.0" text="Next" />
+                                                            <Label layoutX="189.0" layoutY="202.0" text="*" textFill="#fa0505">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="189.0" layoutY="160.0" text="*" textFill="#fa0505">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="189.0" layoutY="115.0" text="*" textFill="#fa0505">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="187.0" layoutY="39.0" text="*" textFill="#fa0505">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                                <Tab fx:id="tabCharges" text="Charges">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <TableView layoutX="4.0" layoutY="45.0" prefHeight="303.0" prefWidth="691.0">
+                                                              <columns>
+                                                                <TableColumn prefWidth="75.0" text="C1" />
+                                                                <TableColumn prefWidth="75.0" text="C2" />
+                                                              </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                  </content>
+                                                </Tab>
+                                                <Tab fx:id="tabCollateral" text="Collateral">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                  </content>
+                                                </Tab>
+                                                <Tab fx:id="tabGuarantors" text="Guarantors">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                  </content>
+                                                </Tab>
+                                                <Tab fx:id="tabRepaymentSchedule" text="Repayment Schedule">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                  </content>
+                                                </Tab>
+                                                <Tab fx:id="tabOverview" text="Overview">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                  </content>
+                                                </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabOverpaidLoans" text="Overpaid Loans">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Loans">
+                           <font>
+                              <Font name="Cambria Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnCreateLoanLoans" layoutX="3.0" layoutY="41.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="Create Loan">
+                           <font>
+                              <Font name="Cambria Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <TreeTableView fx:id="treeTableOverpaidLoans" layoutX="2.0" layoutY="69.0" prefHeight="409.0" prefWidth="1195.0">
+                           <columns>
+                              <TreeTableColumn fx:id="colAccountNumberOveprpaidLoans" prefWidth="124.0" text="Account Number" />
+                              <TreeTableColumn fx:id="colBranchOverpaidLoans" prefWidth="126.0" text="Branch" />
+                              <TreeTableColumn fx:id="colClientNameOverpaidLoans" prefWidth="83.0" text="Client Name" />
+                              <TreeTableColumn fx:id="colGroupNameOverpaidLoans" prefWidth="153.0" text="Group Name" />
+                              <TreeTableColumn fx:id="colAmountOverpaidLoans" prefWidth="131.0" text="Amount" />
+                              <TreeTableColumn fx:id="colBalanceOverpaidLoans" prefWidth="152.0" text="Balance" />
+                              <TreeTableColumn fx:id="colDisbursedOverpaidLoans" prefWidth="154.0" text="Disbursed" />
+                              <TreeTableColumn fx:id="colProductNameOverpaidLoans" prefWidth="173.0" text="Product Name" />
+                              <TreeTableColumn fx:id="colActionOverpaidLoans" prefWidth="96.0" text="Action" />
+                           </columns>
+                        </TreeTableView>
+                        <TextField fx:id="fieldSearchOverpaidLoans" layoutX="1004.0" layoutY="29.0" prefHeight="25.0" prefWidth="189.0" promptText="Search here...">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="954.0" layoutY="33.0" text="Search :">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabPendingApprovalLoans" text="Pending Approval">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TreeTableView fx:id="treeTablePendingApproval" layoutX="1.0" layoutY="76.0" prefHeight="403.0" prefWidth="1195.0">
+                           <columns>
+                              <TreeTableColumn fx:id="colAccountNumberPendingApprovals" prefWidth="121.0" text="Account Number" />
+                              <TreeTableColumn fx:id="colBranchPendingApprovals" prefWidth="122.0" text="Branch" />
+                              <TreeTableColumn fx:id="colClientNamePendingApprovals" prefWidth="182.0" text="Client Name" />
+                              <TreeTableColumn fx:id="colGroupNamePendingApprovals" prefWidth="186.0" text="Group Name" />
+                              <TreeTableColumn fx:id="colAmount" prefWidth="137.0" text="Amount" />
+                              <TreeTableColumn fx:id="colCreatedDatePendingApproval" prefWidth="147.0" text="Created Date" />
+                              <TreeTableColumn fx:id="colProductNamePendingApproval" prefWidth="192.0" text="Product Name" />
+                              <TreeTableColumn fx:id="colActionPendingApproval" prefWidth="107.0" text="Action" />
+                           </columns>
+                        </TreeTableView>
+                        <Label layoutX="14.0" layoutY="14.0" text="Pending Approval">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="fieldSearchOverpaidLoans" layoutX="976.0" layoutY="24.0" prefHeight="25.0" prefWidth="219.0" promptText="Search here...">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="927.0" layoutY="28.0" text="Search :">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnBulkApprovalPendingApproval" layoutX="14.0" layoutY="40.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="128.0" text="Bulk Approval">
+                           <font>
+                              <Font name="Cambria Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabAwaitingDisbursementLoans" text="Awaiting Disbursment">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Awaiting Disbursement">
+                           <font>
+                              <Font name="Cambria Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="13.0" layoutY="43.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="144.0" text="Bulk Disbursement">
+                           <font>
+                              <Font name="Cambria Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="fieldSearchAwaitingDisbursement" layoutX="1002.0" layoutY="31.0" prefHeight="25.0" prefWidth="191.0" promptText="Search here...">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="955.0" layoutY="35.0" text="Search :">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <TreeTableView fx:id="treeTableAwaitingDisbursement" layoutX="3.0" layoutY="78.0" prefHeight="398.0" prefWidth="1195.0">
+                           <columns>
+                              <TreeTableColumn fx:id="colAccountNumberAwaitingDisbursement" prefWidth="125.0" text="Account Number" />
+                              <TreeTableColumn fx:id="colBranchAwaitingDisbursement" prefWidth="131.0" text="Branch" />
+                              <TreeTableColumn fx:id="colClientNameAwaitingDisbursement" prefWidth="131.0" text="Client Name" />
+                              <TreeTableColumn fx:id="colGroupName" prefWidth="118.0" text="Group Name" />
+                              <TreeTableColumn fx:id="colAmountAwaitingDisbursement" prefWidth="130.0" text="Amount" />
+                              <TreeTableColumn fx:id="colApprovedDateAwaitingDisbursement" prefWidth="106.0" text="Approved Date" />
+                              <TreeTableColumn fx:id="colExpectedDisbursementDate" prefWidth="176.0" text="Expected Disbursement Date" />
+                              <TreeTableColumn fx:id="colProductName" prefWidth="180.0" text="Product Name" />
+                              <TreeTableColumn fx:id="colActionAwaitingDisbursement" prefWidth="94.0" text="Disburse" />
+                           </columns>
+                        </TreeTableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabDeclinedLoans" text="Declined">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Declined">
+                           <font>
+                              <Font name="Cambria Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TreeTableView fx:id="treeTableDeclined" layoutX="1.0" layoutY="47.0" prefHeight="429.0" prefWidth="1195.0">
+                           <columns>
+                              <TreeTableColumn prefWidth="122.0" text="Account Number" />
+                              <TreeTableColumn fx:id="colBranchDeclined" prefWidth="113.0" text="Branch" />
+                              <TreeTableColumn fx:id="colClientNameDeclined" prefWidth="122.0" text="Client Name" />
+                              <TreeTableColumn fx:id="colGroupNameDeclined" prefWidth="144.0" text="Group Name" />
+                              <TreeTableColumn fx:id="colAmountDeclined" prefWidth="127.0" text="Amount" />
+                              <TreeTableColumn fx:id="colSubmittedOnDeclined" prefWidth="126.0" text="Submitted On" />
+                              <TreeTableColumn fx:id="colrejectedOnDeclined" prefWidth="140.0" text="Rejected On" />
+                              <TreeTableColumn fx:id="colProductNameDeclined" prefWidth="197.0" text="Product Name" />
+                              <TreeTableColumn fx:id="colViewDeclined" prefWidth="102.0" text="View" />
+                           </columns>
+                        </TreeTableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabWithdrawnLoans" text="Withdrawn">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="5.0" layoutY="14.0" text="Withdrawn">
+                           <font>
+                              <Font name="Cambria Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TreeTableView layoutX="3.0" layoutY="57.0" prefHeight="420.0" prefWidth="1195.0">
+                           <columns>
+                              <TreeTableColumn fx:id="colAccountNumberWithdrawnLoans" prefWidth="102.0" text="Account Number" />
+                              <TreeTableColumn fx:id="colBranchWithdrawn" prefWidth="128.0" text="Branch " />
+                              <TreeTableColumn fx:id="colClientName" prefWidth="135.0" text="Client Name" />
+                              <TreeTableColumn fx:id="colGroupNameWithdrawn" prefWidth="126.0" text="Group Name" />
+                              <TreeTableColumn fx:id="colAmountWithdrawn" prefWidth="144.0" text="Amount" />
+                              <TreeTableColumn fx:id="colSubmittedOnWithdrawn" prefWidth="136.0" text="Submitted On" />
+                              <TreeTableColumn fx:id="colWithdrawOn" prefWidth="148.0" text="Withdraw On" />
+                              <TreeTableColumn fx:id="colProductNameWithdrawnLoans" prefWidth="188.0" text="Product Name" />
+                              <TreeTableColumn fx:id="colViewWithdrawn" prefWidth="86.0" text="View" />
+                           </columns>
+                        </TreeTableView>
+                        <TextField fx:id="fieldSearchWithdrawnLoans" layoutX="997.0" layoutY="25.0" prefHeight="25.0" prefWidth="197.0" promptText="Search here...">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="947.0" layoutY="29.0" text="Search :">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabWithdrawnOffLoans" text="Withdrawn Off Loans">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="5.0" layoutY="14.0" prefHeight="23.0" prefWidth="167.0" text="Written Off Loans">
+                           <font>
+                              <Font name="Cambria Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TreeTableView fx:id="treeTableWrittenOffLoans" layoutY="43.0" prefHeight="435.0" prefWidth="1195.0">
+                           <columns>
+                              <TreeTableColumn fx:id="colAccoutnNumberWithdrawnOffLoans" prefWidth="115.0" text="Account Number" />
+                              <TreeTableColumn fx:id="colBranchWrittenOffLoans" prefWidth="98.0" text="Branch" />
+                              <TreeTableColumn fx:id="colClientNameWithdrawnOffLoans" prefWidth="126.0" text="Client Name" />
+                              <TreeTableColumn fx:id="colgroupNameWithdrawnOffLoans" prefWidth="176.0" text="Group Name" />
+                              <TreeTableColumn fx:id="colAmountWithdrawnOffLoans" prefWidth="142.0" text="Amount" />
+                              <TreeTableColumn fx:id="colBalanceWithdrawnOffLoans" prefWidth="132.0" text="Balance" />
+                              <TreeTableColumn fx:id="colWriitenOffLoan" prefWidth="127.0" text="Written Off Loan" />
+                              <TreeTableColumn fx:id="colProductNameWithdranwOffLoans" prefWidth="170.0" text="Product Name" />
+                              <TreeTableColumn fx:id="colViewWithdrawnOffLoans" prefWidth="108.0" text="View" />
+                           </columns>
+                        </TreeTableView>
+                        <TextField fx:id="fieldSearchWithdrawnOffLoans" layoutX="989.0" layoutY="13.0" prefHeight="25.0" prefWidth="205.0" promptText="Search here...">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="939.0" layoutY="17.0" text="Search :">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabClosedLoans" text="Closed">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Closed">
+                           <font>
+                              <Font name="Cambria Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <TreeTableView fx:id="colClosedLoans" layoutX="2.0" layoutY="53.0" prefHeight="425.0" prefWidth="1195.0">
+                           <columns>
+                              <TreeTableColumn fx:id="colAccountNumberClosedLoans" prefWidth="128.0" text="Account Number" />
+                              <TreeTableColumn fx:id="colBranchClosedLoans" prefWidth="144.0" text="Branch" />
+                              <TreeTableColumn fx:id="colClientNameClosedLoans" prefWidth="183.0" text="Client Name" />
+                              <TreeTableColumn fx:id="colGroupNameClosedLoans" prefWidth="147.0" text="Group Name" />
+                              <TreeTableColumn fx:id="colAmountClosedLoans" prefWidth="152.0" text="Amount" />
+                              <TreeTableColumn fx:id="colClosedOnClosedLoans" prefWidth="145.0" text="Closed On" />
+                              <TreeTableColumn fx:id="colProductNameClosedLoans" prefWidth="187.0" text="Product Name" />
+                              <TreeTableColumn fx:id="colViewClosed" prefWidth="107.0" text="View" />
+                           </columns>
+                        </TreeTableView>
+                        <TextField fx:id="fieldSearchClosedLoans" layoutX="981.0" layoutY="25.0" prefHeight="25.0" prefWidth="213.0" promptText="Search here...">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="936.0" layoutY="29.0" text="Search :">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Loan Reschedule Pending">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TreeTableView layoutX="3.0" layoutY="40.0" prefHeight="437.0" prefWidth="1195.0">
+                           <columns>
+                              <TreeTableColumn fx:id="colAccoutnNumberReschedule" prefWidth="165.0" text="Account Number" />
+                              <TreeTableColumn fx:id="colBranchReschedule" prefWidth="215.0" text="Branch" />
+                              <TreeTableColumn fx:id="colClientNameReschedule" prefWidth="210.0" text="Client Name" />
+                              <TreeTableColumn fx:id="colGroupNameReschedule" prefWidth="176.0" text="Group Name" />
+                              <TreeTableColumn fx:id="colSubmittedDateReschedule" prefWidth="181.0" text="Submitted Date" />
+                              <TreeTableColumn fx:id="colRescheduleFromDate" prefWidth="153.0" text="Reschedule From Date" />
+                              <TreeTableColumn fx:id="colViewReschedule" prefWidth="92.0" text="View" />
+                           </columns>
+                        </TreeTableView>
+                        <TextField fx:id="fieldSearchReschedule" layoutX="1005.0" layoutY="10.0" prefHeight="25.0" prefWidth="187.0" promptText="Search here...">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="957.0" layoutY="14.0" text="Search :">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>

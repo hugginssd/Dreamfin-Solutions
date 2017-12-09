@@ -27,9 +27,15 @@
  */
 package dreamfin.solutions.module.products;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -41,9 +47,23 @@ public class ProductsController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    @FXML
+    private Stage stage;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
+    @FXML
+    public void createLoans() throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/dreamfin/solutions/module/products/createLoans.fxml"));
+        Scene scene = new Scene(pane);
+        stage = new Stage();
+        //scene.getStylesheets().addAll("/resources/css/createloans.css");
+        stage.setScene(scene);
+        stage.sizeToScene();
+        stage.centerOnScreen();
+        stage.showAndWait();
+    }
 }

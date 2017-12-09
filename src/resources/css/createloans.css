@@ -5,3 +5,15 @@
 .mainFxmlClass {
 
 }
+#anchorPane
+{
+    -fx-background-color:aqua;
+
+
+}
+#tabPane
+{
+
+    -fx-background-color:aqua;
+
+}
