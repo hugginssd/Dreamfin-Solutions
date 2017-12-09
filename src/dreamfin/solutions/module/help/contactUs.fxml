@@ -8,9 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="500.0" prefWidth="516.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dreamfin.solutions.module.help.ContactUsController">
+<AnchorPane fx:id="anchorPane" prefHeight="401.0" prefWidth="489.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dreamfin.solutions.module.help.ContactUsController">
     <stylesheets>
-        <URL value="@contactus.css" />
+        <URL value="@/resources/css/contactus.css" />
     </stylesheets>
    <children>
       <Label layoutX="45.0" layoutY="95.0" text="Email Address :">
@@ -33,7 +33,7 @@
             <Font name="Cambria Italic" size="12.0" />
          </font>
       </TextField>
-      <TextArea fx:id="fieldComment" layoutX="139.0" layoutY="175.0" prefHeight="267.0" prefWidth="328.0" promptText="Type here...">
+      <TextArea fx:id="fieldComment" layoutX="139.0" layoutY="175.0" prefHeight="181.0" prefWidth="328.0" promptText="Type here...">
          <font>
             <Font name="Cambria Bold Italic" size="12.0" />
          </font>
@@ -43,12 +43,12 @@
             <Font name="Cambria Bold" size="25.0" />
          </font>
       </Label>
-      <Button fx:id="btnSendFeedback" layoutX="357.0" layoutY="450.0" mnemonicParsing="false" onAction="#validateInput" prefHeight="25.0" prefWidth="110.0" text="Send Feedback">
+      <Button fx:id="btnSendFeedback" layoutX="357.0" layoutY="364.0" mnemonicParsing="false" onAction="#validateInput" prefHeight="25.0" prefWidth="110.0" text="Send Feedback">
          <font>
             <Font name="Cambria Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnClose" layoutX="290.0" layoutY="450.0" mnemonicParsing="false" onAction="#closeStage" prefHeight="25.0" prefWidth="65.0" text="Close">
+      <Button fx:id="btnClose" layoutX="290.0" layoutY="364.0" mnemonicParsing="false" onAction="#closeStage" prefHeight="25.0" prefWidth="65.0" text="Close">
          <font>
             <Font name="Cambria Bold Italic" size="12.0" />
          </font>
